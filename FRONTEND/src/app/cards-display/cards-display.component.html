@@ -1,0 +1,12 @@
+<h2>Card list :</h2>
+
+<div class="card-displayer">
+@for (creditCard of cards; track $index) {
+  <div class="card">
+    <div class="card-info card-number">{{ creditCard.number | password }}</div>
+    <div class="card-info card-owner">{{ creditCard.owner }}</div>
+    <div class="card-info card-expiry-date">{{ creditCard.expiryDate }}</div>
+    <div class="card-info card-ccv">{{ creditCard.ccv }}</div>
+  </div>
+}
+</div>

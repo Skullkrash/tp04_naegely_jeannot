@@ -1,0 +1,21 @@
+<h2>Add a credit card</h2>
+<form [formGroup]="credit_card_form" (ngSubmit)="onSubmit()">
+
+    <label for="number" [ContainsError]="number()?.status === 'INVALID' ? true : false">Credit card number : </label>
+    <input id="number" type="text" formControlName="number"/>
+    <br>
+
+    <label for="owner" [ContainsError]="owner()?.status === 'INVALID' ? true : false">Card owner : </label>
+    <input name="owner" type="text" formControlName="owner"/>
+    <br>
+
+    <label for="expiryDate" [ContainsError]="expiryDate()?.status === 'INVALID' ? true : false">Date of expiry : </label>
+    <input name="expiryDate" type="month" formControlName="expiryDate" placeholder="MM/YYYY"/>
+    <br>
+
+    <label for="ccv" [ContainsError]="ccv()?.status === 'INVALID' ? true : false">CCV : </label>
+    <input name="ccv" type="text" formControlName="ccv"/>
+    <br>
+
+    <button [type]="'submit'" [disabled]="!credit_card_form.valid">Submit inputs</button>
+</form>
